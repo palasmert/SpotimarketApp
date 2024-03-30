@@ -19,6 +19,9 @@
 		612EF6FE2BB72396004174A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612EF6FD2BB72396004174A2 /* User.swift */; };
 		613350DD2BB787DC00F94037 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = 613350DC2BB787DC00F94037 /* SwiftfulUI */; };
 		613350E02BB788B100F94037 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 613350DF2BB788B100F94037 /* SwiftfulRouting */; };
+		61550A3D2BB857F9006C0A6E /* SpotifyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61550A3C2BB857F9006C0A6E /* SpotifyHomeView.swift */; };
+		61550A3F2BB87141006C0A6E /* SpotifyCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61550A3E2BB87141006C0A6E /* SpotifyCategoryCell.swift */; };
+		61550A422BB89A08006C0A6E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61550A412BB89A08006C0A6E /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		612EF6F92BB71DE2004174A2 /* DataBaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseHelper.swift; sourceTree = "<group>"; };
 		612EF6FB2BB72344004174A2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		612EF6FD2BB72396004174A2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		61550A3C2BB857F9006C0A6E /* SpotifyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyHomeView.swift; sourceTree = "<group>"; };
+		61550A3E2BB87141006C0A6E /* SpotifyCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCategoryCell.swift; sourceTree = "<group>"; };
+		61550A412BB89A08006C0A6E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 			children = (
 				612EF6E12BB717C3004174A2 /* SpotimarketApp.swift */,
 				612EF6E32BB717C3004174A2 /* ContentView.swift */,
+				61550A392BB857AA006C0A6E /* Spotify */,
 				612EF6F22BB71987004174A2 /* Shared */,
 				612EF6E52BB717C4004174A2 /* Assets.xcassets */,
 				612EF6E72BB717C4004174A2 /* Preview Content */,
@@ -94,6 +101,40 @@
 				612EF6FB2BB72344004174A2 /* Product.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		61550A392BB857AA006C0A6E /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				61550A402BB899F5006C0A6E /* Models */,
+				61550A3B2BB857D6006C0A6E /* Components */,
+				61550A3A2BB857CB006C0A6E /* Core */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
+		61550A3A2BB857CB006C0A6E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				61550A3C2BB857F9006C0A6E /* SpotifyHomeView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		61550A3B2BB857D6006C0A6E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				61550A3E2BB87141006C0A6E /* SpotifyCategoryCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		61550A402BB899F5006C0A6E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				61550A412BB89A08006C0A6E /* Category.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				612EF6F62BB719C6004174A2 /* ImageLoaderView.swift in Sources */,
+				61550A422BB89A08006C0A6E /* Category.swift in Sources */,
+				61550A3F2BB87141006C0A6E /* SpotifyCategoryCell.swift in Sources */,
 				612EF6E42BB717C3004174A2 /* ContentView.swift in Sources */,
+				61550A3D2BB857F9006C0A6E /* SpotifyHomeView.swift in Sources */,
 				612EF6E22BB717C3004174A2 /* SpotimarketApp.swift in Sources */,
 				612EF6F82BB71B40004174A2 /* Constants.swift in Sources */,
 				612EF6FA2BB71DE2004174A2 /* DataBaseHelper.swift in Sources */,

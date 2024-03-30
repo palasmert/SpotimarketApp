@@ -18,6 +18,7 @@ struct ContentView: View {
         ScrollView{
             ForEach(products) { products in
                 Text(products.title)
+                    .foregroundStyle(.spotifyGreen)
             }
         }
     
