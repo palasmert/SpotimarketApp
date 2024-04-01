@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct SpotifyHomeView: View {
     
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
+    @State private var products: [Product] = []
     
     var body: some View {
         ZStack {
@@ -20,6 +22,21 @@ struct SpotifyHomeView: View {
                 LazyVStack(spacing: 1, pinnedViews: [.sectionHeaders], content: {
                     ForEach(1...10, id: \.self) { count in
                         Section {
+                            VStack {
+                                NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
+                                    if let product {
+                                        SpotifyRecentCell(
+                                            imageName: product.firstImage,
+                                            title: product.title
+                                        )
+                                
+                                    }
+                                        
+                                }
+                            }
+                               
+                            
+                            
                             ForEach(0..<20) { _ in
                             Rectangle()
                                     .fill(Color.red)
@@ -44,7 +61,7 @@ struct SpotifyHomeView: View {
     private func getData() async {
         do {
             currentUser = try await DataBaseHelper().getUsers().first
-            //products = try await DataBaseHelper().getProducts()
+            products = try await DataBaseHelper().getProducts()
             
         } catch {
             
@@ -70,7 +87,7 @@ struct SpotifyHomeView: View {
                     ForEach(Category.allCases, id: \.self) { category in
                         SpotifyCategoryCell(
                             title: category.rawValue.capitalized,
-                            isSeleceted: category == selectedCategory
+                            isSelected: category == selectedCategory
                         )
                         .onTapGesture {
                             selectedCategory = category

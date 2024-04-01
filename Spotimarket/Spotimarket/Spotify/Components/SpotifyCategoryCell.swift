@@ -10,7 +10,7 @@ import SwiftUI
 struct SpotifyCategoryCell: View {
     
     var title: String = "All"
-    var isSeleceted: Bool = false
+    var isSelected: Bool = false
     
     var body: some View {
         Text(title)
@@ -18,11 +18,19 @@ struct SpotifyCategoryCell: View {
             .padding(.vertical, 8)
             .frame(minWidth: 35)
             .padding(.horizontal, 10)
-            .background(isSeleceted ? .spotifyGreen: .spotifyDarkGrey)
-            .foregroundStyle(isSeleceted ? .spotifyBlack: .spotifyWhite)
+            .themeColors(isSelected: isSelected)
             .cornerRadius(16)
     }
 }
+
+extension View {
+    func themeColors(isSelected: Bool) -> some View{
+        self
+            .background(isSelected ? .spotifyGreen: .spotifyDarkGrey)
+            .foregroundStyle(isSelected ? .spotifyBlack: .spotifyWhite)
+    }
+}
+
 
 #Preview {
     ZStack{
@@ -30,8 +38,8 @@ struct SpotifyCategoryCell: View {
         
         VStack(spacing: 40) {
             SpotifyCategoryCell(title: "Title goes here")
-            SpotifyCategoryCell(title: "Title goes here", isSeleceted: true)
-            SpotifyCategoryCell(isSeleceted: true)
+            SpotifyCategoryCell(title: "Title goes here", isSelected:  true)
+            SpotifyCategoryCell(isSelected: true)
 
             
         }

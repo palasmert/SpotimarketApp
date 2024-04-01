@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611B82AA2BBB43470022F3D9 /* SpotifyRecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B82A92BBB43460022F3D9 /* SpotifyRecentCell.swift */; };
 		612EF6E22BB717C3004174A2 /* SpotimarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612EF6E12BB717C3004174A2 /* SpotimarketApp.swift */; };
 		612EF6E42BB717C3004174A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612EF6E32BB717C3004174A2 /* ContentView.swift */; };
 		612EF6E62BB717C4004174A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 612EF6E52BB717C4004174A2 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		611B82A92BBB43460022F3D9 /* SpotifyRecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyRecentCell.swift; sourceTree = "<group>"; };
 		612EF6DE2BB717C3004174A2 /* Spotimarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotimarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		612EF6E12BB717C3004174A2 /* SpotimarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotimarketApp.swift; sourceTree = "<group>"; };
 		612EF6E32BB717C3004174A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				61550A3E2BB87141006C0A6E /* SpotifyCategoryCell.swift */,
+				611B82A92BBB43460022F3D9 /* SpotifyRecentCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				612EF6E22BB717C3004174A2 /* SpotimarketApp.swift in Sources */,
 				612EF6F82BB71B40004174A2 /* Constants.swift in Sources */,
 				612EF6FA2BB71DE2004174A2 /* DataBaseHelper.swift in Sources */,
+				611B82AA2BBB43470022F3D9 /* SpotifyRecentCell.swift in Sources */,
 				612EF6FC2BB72344004174A2 /* Product.swift in Sources */,
 				612EF6FE2BB72396004174A2 /* User.swift in Sources */,
 			);
