@@ -22,18 +22,17 @@ struct SpotifyHomeView: View {
                 LazyVStack(spacing: 1, pinnedViews: [.sectionHeaders], content: {
                     ForEach(1...10, id: \.self) { count in
                         Section {
-                            VStack {
-                                NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
-                                    if let product {
-                                        SpotifyRecentCell(
-                                            imageName: product.firstImage,
-                                            title: product.title
-                                        )
+                            VStack(spacing: 16) {
+                                recentsSection
                                 
-                                    }
-                                        
+                                if let product = products.first {
+                                    NewReleaseSection(product: product)
+                                    
                                 }
                             }
+                                        
+                            .padding(.horizontal, 16)
+                            
                                
                             
                             
@@ -58,10 +57,11 @@ struct SpotifyHomeView: View {
         }
         .toolbar(.hidden ,for: .navigationBar)
     }
+    
     private func getData() async {
         do {
             currentUser = try await DataBaseHelper().getUsers().first
-            products = try await DataBaseHelper().getProducts()
+            products = try await Array (DataBaseHelper().getProducts().prefix(8))
             
         } catch {
             
@@ -89,9 +89,9 @@ struct SpotifyHomeView: View {
                             title: category.rawValue.capitalized,
                             isSelected: category == selectedCategory
                         )
-                        .onTapGesture {
-                            selectedCategory = category
-                        }
+               //         .onTapGesture {
+                //          selectedCategory = category
+                //    }
                         
                     }
                 }
@@ -104,6 +104,35 @@ struct SpotifyHomeView: View {
         .padding(.leading,8)
         .background(Color.spotifyBlack)
     }
+    
+    private var recentsSection: some View {
+        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
+            if let product {
+                SpotifyRecentCell(
+                    imageName: product.firstImage,
+                    title: product.title
+                )
+        
+            }
+                
+        }
+    }
+    private func NewReleaseSection(product: Product) -> some View {
+        SpotifyNewReleaseCell(
+            imageName: product.firstImage,
+            headline: product.brand,
+            subheadline: product.category,
+            title: product.title,
+            subtitle: product.description,
+            onAddToPlaylistPressed:{
+                
+            } ,
+            onPlayPressed: {
+                
+            }
+        )
+    }
+    
 }
 #Preview {
     SpotifyHomeView()

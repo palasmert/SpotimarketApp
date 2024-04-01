@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SpotifyRecentCell: View {
     
+    
     var imageName: String = Constants.randomImage
     var title: String = "Some random title"
     
